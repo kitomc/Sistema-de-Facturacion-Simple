@@ -1,0 +1,16 @@
+public DataTable consular()
+        {
+            SqlConnection con = new SqlConnection(cc);  //conexion
+            SqlDataAdapter oda = new SqlDataAdapter();  //Adaptador
+            DataTable odt = new DataTable();            //Tabal virtual   
+
+
+            SqlCommand ocmd = con.CreateCommand();         //comando
+            ocmd.CommandText = "Select id,nombre,cedula from personas";
+            oda.SelectCommand = ocmd;
+            oda.Fill(odt);
+            return odt;
+        }
+
+
+
